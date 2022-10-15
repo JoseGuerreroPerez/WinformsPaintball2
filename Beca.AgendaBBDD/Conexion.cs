@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,13 @@ namespace Beca.AgendaBBDD
 {
     public class Conexion
     {
-        SqlConnection cnx;
+        public SqlConnection cnx;
 
         public Conexion()
         {
             try
             {
-                cnx = new SqlConnection("Data Source=WINAPXWCXOVEEYF\\SQLEXPRESS;Initial Catalog=Agenda;");
-                cnx.Open();
+                cnx = new SqlConnection("Data Source=WINAPXWCXOVEEYF\\SQLEXPRESS;Initial Catalog=Agenda;Integrated Security=True");
                 Console.WriteLine("Éxito al conectar.");
             }
             catch(Exception ex)
