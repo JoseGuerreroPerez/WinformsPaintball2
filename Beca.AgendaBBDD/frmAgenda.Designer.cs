@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgenda));
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
@@ -44,13 +45,15 @@
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.gbInfoContacto = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
+            this.gbInfoContacto.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(87, 57);
+            this.lblNombre.Location = new System.Drawing.Point(21, 51);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(54, 15);
             this.lblNombre.TabIndex = 0;
@@ -58,7 +61,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(199, 54);
+            this.txtNombre.Location = new System.Drawing.Point(133, 48);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 23);
             this.txtNombre.TabIndex = 1;
@@ -66,7 +69,7 @@
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(87, 89);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(21, 83);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(106, 15);
             this.lblFechaNacimiento.TabIndex = 2;
@@ -75,14 +78,14 @@
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(199, 83);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(133, 77);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(145, 23);
             this.dtpFechaNacimiento.TabIndex = 3;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(199, 117);
+            this.txtTelefono.Location = new System.Drawing.Point(133, 111);
             this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(145, 23);
@@ -93,7 +96,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(87, 120);
+            this.lblTelefono.Location = new System.Drawing.Point(21, 114);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(55, 15);
             this.lblTelefono.TabIndex = 4;
@@ -166,7 +169,7 @@
             // txtObservaciones
             // 
             this.txtObservaciones.AcceptsReturn = true;
-            this.txtObservaciones.Location = new System.Drawing.Point(199, 146);
+            this.txtObservaciones.Location = new System.Drawing.Point(133, 140);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(291, 55);
@@ -175,7 +178,7 @@
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(87, 149);
+            this.lblObservaciones.Location = new System.Drawing.Point(21, 143);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(87, 15);
             this.lblObservaciones.TabIndex = 12;
@@ -183,7 +186,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(199, 25);
+            this.txtId.Location = new System.Drawing.Point(133, 19);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(53, 23);
             this.txtId.TabIndex = 15;
@@ -191,39 +194,51 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(88, 28);
+            this.lblId.Location = new System.Drawing.Point(22, 22);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(20, 15);
             this.lblId.TabIndex = 16;
             this.lblId.Text = "Id:";
             // 
-            // Form1
+            // gbInfoContacto
+            // 
+            this.gbInfoContacto.Controls.Add(this.lblId);
+            this.gbInfoContacto.Controls.Add(this.lblNombre);
+            this.gbInfoContacto.Controls.Add(this.txtId);
+            this.gbInfoContacto.Controls.Add(this.txtNombre);
+            this.gbInfoContacto.Controls.Add(this.txtObservaciones);
+            this.gbInfoContacto.Controls.Add(this.lblFechaNacimiento);
+            this.gbInfoContacto.Controls.Add(this.lblObservaciones);
+            this.gbInfoContacto.Controls.Add(this.dtpFechaNacimiento);
+            this.gbInfoContacto.Controls.Add(this.txtTelefono);
+            this.gbInfoContacto.Controls.Add(this.lblTelefono);
+            this.gbInfoContacto.Location = new System.Drawing.Point(41, 12);
+            this.gbInfoContacto.Name = "gbInfoContacto";
+            this.gbInfoContacto.Size = new System.Drawing.Size(580, 211);
+            this.gbInfoContacto.TabIndex = 17;
+            this.gbInfoContacto.TabStop = false;
+            this.gbInfoContacto.Text = "Contacto:";
+            // 
+            // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 479);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.txtObservaciones);
-            this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.dgvListado);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.dtpFechaNacimiento);
-            this.Controls.Add(this.lblFechaNacimiento);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
-            this.Name = "Form1";
-            this.Text = "Agenda";
+            this.Controls.Add(this.gbInfoContacto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmAgenda";
+            this.Text = "Agenda de Contactos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
+            this.gbInfoContacto.ResumeLayout(false);
+            this.gbInfoContacto.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -245,5 +260,6 @@
         private Label lblObservaciones;
         private TextBox txtId;
         private Label lblId;
+        private GroupBox gbInfoContacto;
     }
 }

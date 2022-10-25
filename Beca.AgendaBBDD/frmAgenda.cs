@@ -41,13 +41,13 @@ namespace Beca.AgendaBBDD
         }
 
         /// <summary>
-        /// Evento KeyPress
+        /// Evento KeyPress para controlar que no se puedan escribir caracteres en el teléfono.
         /// </summary>
         /// <param name="sender">Objeto llamante.</param>
         /// <param name="e">Argumentos del evento.</param>
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -354,6 +354,5 @@ namespace Beca.AgendaBBDD
 
         #endregion
 
-        
     }
 }
