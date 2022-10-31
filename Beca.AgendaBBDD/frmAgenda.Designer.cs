@@ -62,6 +62,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(133, 48);
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 23);
             this.txtNombre.TabIndex = 1;
@@ -170,6 +171,7 @@
             // 
             this.txtObservaciones.AcceptsReturn = true;
             this.txtObservaciones.Location = new System.Drawing.Point(133, 140);
+            this.txtObservaciones.MaxLength = 500;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(291, 55);

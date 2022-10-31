@@ -135,6 +135,7 @@ namespace Beca.AgendaBBDD
                 if (correcto)
                 {
                     MessageBox.Show("la acción se ha realizado correctamente.");
+                    modoEdicion = ModoEdicion.lectura;
                     // Cambiamos el modo a lectura
                     ModoPantallaLectura();
                     // Una vez hemos hecho la acción, recargamos el grid:
@@ -257,8 +258,6 @@ namespace Beca.AgendaBBDD
             txtTelefono.Enabled = false;
             txtId.Enabled = false;
 
-            
-
             dgvListado.Enabled = true;
         }
 
@@ -315,7 +314,7 @@ namespace Beca.AgendaBBDD
         /// </summary>
         public void SeleccionarPrimeraFilaGrid()
         {
-            // Si hay alguna fila seleccionamos la primera
+            // Si hay alguna fila, seleccionamos la primera
             if (dgvListado.Rows.Count > 0)
             {
                 dgvListado.Rows[0].Selected = true;
