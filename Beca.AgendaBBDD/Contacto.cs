@@ -13,10 +13,10 @@ namespace Beca.AgendaBBDD
 
         public string nombre { get; set; }
 
-        public DateTime fechaNacimiento { get; set; }
+        public DateTime fecha { get; set; }
 
-        public string telefono { get; set; }
+        public string numPersonas { get; set; }
 
-        public string observaciones { get; set; }
+        //public bool premium { get; set; }
     }
 }

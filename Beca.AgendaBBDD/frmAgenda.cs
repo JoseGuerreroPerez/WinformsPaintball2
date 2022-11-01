@@ -45,7 +45,7 @@ namespace Beca.AgendaBBDD
         /// </summary>
         /// <param name="sender">Objeto llamante.</param>
         /// <param name="e">Argumentos del evento.</param>
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumPersonas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar))
             {
@@ -145,7 +145,7 @@ namespace Beca.AgendaBBDD
             }
             else
             {
-                MessageBox.Show("Los campos Nombre y Teléfono son obligatorios.");
+                MessageBox.Show("Los campos Nombre reserva y Numero de personas son obligatorios.");
             }
 
         }
@@ -212,20 +212,18 @@ namespace Beca.AgendaBBDD
             // Limpiamos sólo si es modo creación, si es modo edición dejamos los valores:
             if (modoEdicion == ModoEdicion.crear)
             {
-                txtNombre.Text = "";
-                dtpFechaNacimiento.Value = DateTime.Now;
-                txtTelefono.Text = "";
-                txtObservaciones.Text = "";
+                txtNombrePersn.Text = "";
+                dtpFecha.Value = DateTime.Now;
+                txtNumPersonas.Text = "";
                 txtId.Text = "";
 
             }
 
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
-            txtNombre.Enabled = true;
-            dtpFechaNacimiento.Enabled = true;
-            txtObservaciones.Enabled = true;
-            txtTelefono.Enabled = true;
+            txtNombrePersn.Enabled = true;
+            dtpFecha.Enabled = true;
+            txtNumPersonas.Enabled = true;
             txtId.Enabled = false;
 
             btnAñadir.Enabled = false;
@@ -240,10 +238,9 @@ namespace Beca.AgendaBBDD
         /// </summary>
         public void ModoPantallaLectura()
         {
-            txtNombre.Text = "";
-            dtpFechaNacimiento.Value = DateTime.Now;
-            txtTelefono.Text = "";
-            txtObservaciones.Text = "";
+            txtNombrePersn.Text = "";
+            dtpFecha.Value = DateTime.Now;
+            txtNumPersonas.Text = "";
             txtId.Text = "";
 
             btnGuardar.Enabled = false;
@@ -252,10 +249,9 @@ namespace Beca.AgendaBBDD
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;
 
-            txtNombre.Enabled = false;
-            dtpFechaNacimiento.Enabled = false;
-            txtObservaciones.Enabled = false;
-            txtTelefono.Enabled = false;
+            txtNombrePersn.Enabled = false;
+            dtpFecha.Enabled = false;
+            txtNumPersonas.Enabled = false;
             txtId.Enabled = false;
 
             dgvListado.Enabled = true;
@@ -269,10 +265,9 @@ namespace Beca.AgendaBBDD
         {
             Contacto contacto = new Contacto();
 
-            contacto.nombre = txtNombre.Text;
-            contacto.telefono = txtTelefono.Text;
-            contacto.observaciones = txtObservaciones.Text;
-            contacto.fechaNacimiento = dtpFechaNacimiento.Value;
+            contacto.nombre = txtNombrePersn.Text;
+            contacto.numPersonas = txtNumPersonas.Text;
+            contacto.fecha = dtpFecha.Value;
 
             if (!String.IsNullOrEmpty(txtId.Text))
             {
@@ -292,17 +287,16 @@ namespace Beca.AgendaBBDD
             dgvListado.DataSource = ds.Tables[0];
 
             // Tamaños columnas
-            dgvListado.Columns["Id"].Width = 40;
-            dgvListado.Columns["Nombre"].Width = 150;
-            dgvListado.Columns["FechaNacimiento"].Width = 150;
-            dgvListado.Columns["Telefono"].Width = 120;
-            dgvListado.Columns["Observaciones"].Width = 300;
+            dgvListado.Columns["ID_Reserva"].Width = 40;
+            dgvListado.Columns["Nombre_Reserva"].Width = 150;
+            dgvListado.Columns["Fecha"].Width = 150;
+            dgvListado.Columns["Num_Personas"].Width = 120;
 
             // Renombrado columnas
-            dgvListado.Columns["FechaNacimiento"].HeaderText = "Fecha Nacimiento";
+            dgvListado.Columns["Fecha"].HeaderText = "Fecha";
 
             // Formato fecha en español
-            dgvListado.Columns["FechaNacimiento"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvListado.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
             // Seleccionamos la primera fila del grid si existe
             SeleccionarPrimeraFilaGrid();
@@ -327,11 +321,10 @@ namespace Beca.AgendaBBDD
         /// <param name="filaSeleccionada"></param>
         public void CargarInfoFilaSeleccionadaFormulario(DataGridViewRow filaSeleccionada)
         {
-            txtId.Text = filaSeleccionada.Cells["Id"].Value.ToString();
-            txtNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
-            dtpFechaNacimiento.Value = (DateTime)filaSeleccionada.Cells["FechaNacimiento"].Value;
-            txtTelefono.Text = filaSeleccionada.Cells["Telefono"].Value.ToString();
-            txtObservaciones.Text = filaSeleccionada.Cells["Observaciones"].Value.ToString();
+            txtId.Text = filaSeleccionada.Cells["Id_Reserva"].Value.ToString();
+            txtNombrePersn.Text = filaSeleccionada.Cells["Nombre_Reserva"].Value.ToString();
+            dtpFecha.Value = (DateTime)filaSeleccionada.Cells["Fecha"].Value;
+            txtNumPersonas.Text = filaSeleccionada.Cells["Num_Personas"].Value.ToString();
 
         }
 
@@ -341,7 +334,7 @@ namespace Beca.AgendaBBDD
         /// <returns></returns>
         public bool InformacionObligatoriaCumplimentada()
         {
-            if(String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtTelefono.Text))
+            if(String.IsNullOrEmpty(txtNombrePersn.Text) || String.IsNullOrEmpty(txtNumPersonas.Text))
             {
                 return false;
             }
@@ -353,5 +346,19 @@ namespace Beca.AgendaBBDD
 
         #endregion
 
+        private void gbInfoContacto_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTelefono_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

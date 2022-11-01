@@ -15,7 +15,7 @@ namespace Beca.AgendaBBDD
         {
             try
             {
-                cnx = new SqlConnection("Data Source=WINAPXWCXOVEEYF\\SQLEXPRESS;Initial Catalog=Agenda;Integrated Security=True");
+                cnx = new SqlConnection("Data Source=WINAP6FQZHMPUPR\\SQLEXPRESS;Initial Catalog=PracticaWinforms;Integrated Security=True");
                 Console.WriteLine("Éxito al conectar.");
             }
             catch(Exception ex)

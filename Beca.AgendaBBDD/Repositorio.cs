@@ -23,7 +23,7 @@ namespace Beca.AgendaBBDD
 
             try
             {
-                comando.CommandText = "SELECT * FROM CONTACTOS";
+                comando.CommandText = "SELECT * FROM Paintball";
                 comando.Connection = conexion.cnx;
                 adaptador.SelectCommand = comando;
                 conexion.cnx.Open();
@@ -53,7 +53,7 @@ namespace Beca.AgendaBBDD
 
             try
             {
-                comando.CommandText = "set dateformat dmy; INSERT INTO CONTACTOS VALUES ('" + c.nombre + "', '" + c.fechaNacimiento + "', '" + c.telefono + "', '" + c.observaciones + "')";
+                comando.CommandText = "set dateformat dmy; INSERT INTO Paintball VALUES ('" + c.nombre + "', '" + c.fecha + "', '" + c.numPersonas + "')";
                 
                 comando.Connection = conexion.cnx;
                 conexion.cnx.Open();
@@ -84,7 +84,7 @@ namespace Beca.AgendaBBDD
 
             try
             {
-                comando.CommandText = "DELETE FROM CONTACTOS WHERE ID = '" + c.Id + "'";
+                comando.CommandText = "DELETE FROM Paintball WHERE ID_Reserva = '" + c.Id + "'";
 
                 comando.Connection = conexion.cnx;
                 conexion.cnx.Open();
@@ -115,9 +115,9 @@ namespace Beca.AgendaBBDD
 
             try
             {
-                comando.CommandText = "set dateformat dmy; UPDATE CONTACTOS SET NOMBRE = '" + c.nombre + "', FECHANACIMIENTO= '" + c.fechaNacimiento + "', " + 
-                    "TELEFONO = '" + c.telefono + "', OBSERVACIONES = '" + c.observaciones + "' " +
-                    " WHERE ID = '" + c.Id + "'";
+                comando.CommandText = "set dateformat dmy; UPDATE Paintball SET Nombre_Reserva = '" + c.nombre + "', Fecha= '" + c.fecha + "', " + 
+                    "Num_Personas = '" + c.numPersonas +
+                    "' WHERE ID_Reserva = '" + c.Id + "'";
 
                 comando.Connection = conexion.cnx;
                 conexion.cnx.Open();
